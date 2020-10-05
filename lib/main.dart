@@ -18,18 +18,41 @@ class funStartApp extends StatelessWidget {
                 style: TextStyle(fontSize: 25, color: Colors.black)),
           ),
           body: Center(
-              child: RaisedButton(
-            onPressed: () {},
-            textColor: Colors.white,
-            color: Colors.red[900],
-            splashColor: Colors.cyan,
-            highlightColor: Colors.black,
-            elevation: 5,
-            highlightElevation: 20,
-            shape: Border.all(width: 2, color: Colors.yellow),
-            padding: EdgeInsets.symmetric(vertical: 30, horizontal: 15),
-            child: Text("Raised Button"),
-          )
+              child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.add_a_photo),
+                  iconSize: 50.0,
+                  splashColor: Colors.blue,
+                  tooltip: "Add a photo")
+
+              //  MaterialButton(
+              //     color: Colors.red[400],
+              //     height: 40.0,
+              //     minWidth: 200.0,
+              //     splashColor: Colors.green[400],
+              //     onPressed: () {},
+              //     child: Text("Material Button"),
+              //     // shape: RoundedRectangleBorder(
+              //     //     borderRadius: BorderRadius.circular(15.0)
+              //     //     ),
+              //     shape: Border.all(
+              //       color: Colors.red[800],
+              //       width: 5.0
+              //       )
+              //     )
+
+              //     RaisedButton(
+              //   onPressed: () {},
+              //   textColor: Colors.white,
+              //   color: Colors.red[900],
+              //   splashColor: Colors.cyan,
+              //   highlightColor: Colors.black,
+              //   elevation: 5,
+              //   highlightElevation: 20,
+              //   shape: Border.all(width: 2, color: Colors.yellow),
+              //   padding: EdgeInsets.symmetric(vertical: 30, horizontal: 15),
+              //   child: Text("Raised Button"),
+              // )
 
               //     FlatButton(
               //   splashColor: Colors.cyan,
