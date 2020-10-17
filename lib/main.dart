@@ -7,18 +7,84 @@ void main() {
 class FunStartApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // child: Center(
-      decoration: BoxDecoration(color: Colors.white),
-      child: Image.asset(
-        'assets/images/3.jpg',
-        fit: BoxFit.cover,
+    return MaterialApp(
+      title: 'Text Fields',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
-      // )
+      home: MyHomePage(),
     );
   }
 }
 
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  String myvar;
+  String textToDisplay = 'Default';
+
+  void showText() {
+    setState(() {
+      textToDisplay = myvar;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text("$textToDisplay"),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                onChanged: (text) {
+                  myvar = text;
+                },
+                autocorrect: true,
+                autofocus: true,
+                maxLength: 20,
+                maxLines: 3,
+                //remove all the default design on text field
+                // by hintText :'' under collapsed
+                // decoration: InputDecoration.collapsed(
+                //   hintText: "",
+                // ),
+                decoration: InputDecoration(
+                    hintText: "user name",
+                    labelText: "user name",
+                    helperText: "user name please",
+                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.account_box)),
+                style: TextStyle(color: Colors.red, fontSize: 10.0),
+              ),
+            ),
+            RaisedButton(onPressed: showText, child: Text('Pressed'))
+          ]),
+    );
+  }
+}
+
+///////images //////
+// class FunStartApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       // child: Center(
+//       decoration: BoxDecoration(color: Colors.white),
+//       child: Image.asset(
+//         'assets/images/3.jpg',
+//         fit: BoxFit.cover,
+//       ),
+//       // )
+//     );
+//   }
+// }
+/////// Images end /////
 ////stateFull /////
 // class FunStartApp extends StatefulWidget {
 //   @override
