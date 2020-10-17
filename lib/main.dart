@@ -4,71 +4,90 @@ void main() {
   runApp(FunStartApp());
 }
 
-class FunStartApp extends StatefulWidget {
-  @override
-  _FunStartAppState createState() => _FunStartAppState();
-}
-
-class _FunStartAppState extends State<FunStartApp> {
+class FunStartApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.cyan,
+    return Container(
+      // child: Center(
+      decoration: BoxDecoration(color: Colors.white),
+      child: Image.asset(
+        'assets/images/3.jpg',
+        fit: BoxFit.cover,
       ),
-      title: "state Full Widget",
-      home: Homepage(),
+      // )
     );
   }
 }
 
-class Homepage extends StatefulWidget {
-  @override
-  _HomepageState createState() => _HomepageState();
-}
+////stateFull /////
+// class FunStartApp extends StatefulWidget {
+//   @override
+//   _FunStartAppState createState() => _FunStartAppState();
+// }
 
-class _HomepageState extends State<Homepage> {
-  int dataToChange = 0;
-  void datachange() {
-    setState(() {
-      dataToChange += 1;
-    });
-  }
+// class _FunStartAppState extends State<FunStartApp> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       theme: ThemeData(
+//         primarySwatch: Colors.cyan,
+//       ),
+//       title: "state Full Widget",
+//       home: Homepage(),
+//     );
+//   }
+// }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "AppBar",
-        ),
-      ),
-      body: Center(
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Text(
-                  "$dataToChange",
-                  style: TextStyle(
-                    fontSize: 24.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              RaisedButton(
-                onPressed: datachange,
-                padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
-                child: Text("Click Me",
-                    style: TextStyle(fontSize: 24.0, color: Colors.white)),
-                color: Colors.cyan,
-              )
-            ]),
-      ),
-    );
-  }
-}
+// class Homepage extends StatefulWidget {
+//   @override
+//   _HomepageState createState() => _HomepageState();
+// }
+
+// class _HomepageState extends State<Homepage> {
+//   int dataToChange = 0;
+//   void datachange() {
+//     setState(() {
+//       dataToChange += 1;
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(
+//           "AppBar",
+//         ),
+//       ),
+//       body: Center(
+//         child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: <Widget>[
+//               Padding(
+//                 padding: const EdgeInsets.all(20.0),
+//                 child: Text(
+//                   "$dataToChange",
+//                   style: TextStyle(
+//                     fontSize: 24.0,
+//                     fontWeight: FontWeight.bold,
+//                   ),
+//                 ),
+//               ),
+//               RaisedButton(
+//                 onPressed: datachange,
+//                 padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
+//                 child: Text("Click Me",
+//                     style: TextStyle(fontSize: 24.0, color: Colors.white)),
+//                 color: Colors.cyan,
+//               )
+//             ]),
+//       ),
+//     );
+//   }
+// }
+
+////stateFull end /////
+
 // class FunStartApp extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
