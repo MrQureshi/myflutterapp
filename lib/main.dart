@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'dart:async';
 
 void main() {
   runApp(FunStartApp());
@@ -8,66 +10,118 @@ class FunStartApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Text Fields',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
-      home: MyHomePage(),
+      title: "Material App",
+      home: HomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  String myvar;
-  String textToDisplay = 'Default';
+class _HomePageState extends State<HomePage> {
+  void initState() {
+    super.initState();
+    debugPrint("Start The Splash Screen");
+    Timer(Duration(seconds: 5), finished);
+  }
 
-  void showText() {
-    setState(() {
-      textToDisplay = myvar;
-    });
+  void finished() {
+    debugPrint("Finished......");
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.red,
       body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("$textToDisplay"),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                onChanged: (text) {
-                  myvar = text;
-                },
-                autocorrect: true,
-                autofocus: true,
-                maxLength: 20,
-                maxLines: 3,
-                //remove all the default design on text field
-                // by hintText :'' under collapsed
-                // decoration: InputDecoration.collapsed(
-                //   hintText: "",
-                // ),
-                decoration: InputDecoration(
-                    hintText: "user name",
-                    labelText: "user name",
-                    helperText: "user name please",
-                    border: OutlineInputBorder(),
-                    prefixIcon: Icon(Icons.account_box)),
-                style: TextStyle(color: Colors.red, fontSize: 10.0),
-              ),
-            ),
-            RaisedButton(onPressed: showText, child: Text('Pressed'))
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+              // CircularProgressIndicator(
+              //   backgroundColor: Colors.white,
+              // )
+              Text("Splash\nScreen",
+                  style: TextStyle(
+                      fontSize: 40.0,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w800,
+                      fontFamily: "Cursive"))
+            ])
           ]),
     );
   }
 }
+
+// class FunStartApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Text Fields',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: MyHomePage(),
+//     );
+//   }
+// }
+
+// class MyHomePage extends StatefulWidget {
+//   @override
+//   _MyHomePageState createState() => _MyHomePageState();
+// }
+
+// class _MyHomePageState extends State<MyHomePage> {
+//   String myvar;
+//   String textToDisplay = 'Default';
+
+//   void showText() {
+//     setState(() {
+//       textToDisplay = myvar;
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: <Widget>[
+//             Text("$textToDisplay"),
+//             Padding(
+//               padding: const EdgeInsets.all(8.0),
+//               child: TextField(
+//                 onChanged: (text) {
+//                   myvar = text;
+//                 },
+//                 autocorrect: true,
+//                 autofocus: true,
+//                 maxLength: 20,
+//                 maxLines: 3,
+//                 //remove all the default design on text field
+//                 // by hintText :'' under collapsed
+//                 // decoration: InputDecoration.collapsed(
+//                 //   hintText: "",
+//                 // ),
+//                 decoration: InputDecoration(
+//                     hintText: "user name",
+//                     labelText: "user name",
+//                     helperText: "user name please",
+//                     border: OutlineInputBorder(),
+//                     prefixIcon: Icon(Icons.account_box)),
+//                 style: TextStyle(color: Colors.red, fontSize: 10.0),
+//               ),
+//             ),
+//             RaisedButton(onPressed: showText, child: Text('Pressed'))
+//           ]),
+//     );
+//   }
+// }
 
 ///////images //////
 // class FunStartApp extends StatelessWidget {
